@@ -24,11 +24,19 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    if (mobileOpen) {
-      document.body.classList.add("no-scroll");
-    } else {
-      document.body.classList.remove("no-scroll");
-    }
+    const handleScroll = () => {
+      if (mobileOpen) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "auto";
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, [mobileOpen]);
   return (
     <div className="navbar-container">
