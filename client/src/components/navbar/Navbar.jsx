@@ -24,11 +24,25 @@ const Navbar = () => {
   };
 
   useEffect(() => {
+    const handleTouchMove = (e) => {
+      if (mobileOpen) {
+        e.preventDefault();
+      }
+    };
+
     if (mobileOpen) {
       document.body.classList.add("no-scroll");
+      document.addEventListener("touchmove", handleTouchMove, {
+        passive: false,
+      });
     } else {
       document.body.classList.remove("no-scroll");
+      document.removeEventListener("touchmove", handleTouchMove);
     }
+
+    return () => {
+      document.removeEventListener("touchmove", handleTouchMove);
+    };
   }, [mobileOpen]);
   return (
     <div className="navbar-container">
