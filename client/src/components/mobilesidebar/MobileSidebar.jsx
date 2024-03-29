@@ -7,9 +7,11 @@ import { AppstoreAddOutlined, UserOutlined } from "@ant-design/icons";
 import { Link, useLocation } from "react-router-dom";
 import { AiTwotoneSnippets } from "react-icons/ai";
 import { GrProjects } from "react-icons/gr";
+import { useSelector } from "react-redux";
 const MobileSidebar = () => {
   const [show, setShow] = useState(true);
   const pathname = useLocation().pathname;
+  const user = useSelector((state) => state.user);
 
   return (
     <div className="mobile-sidebar">
@@ -17,12 +19,34 @@ const MobileSidebar = () => {
         <div className="admin-panel">
           <Space size="large">
             <Badge offset={[-4, 35]} color="#46c35f" dot={show}>
-              <Avatar size="large" icon={<UserOutlined />} />
+              {user ? (
+                <Avatar
+                  size="large"
+                  src={`${
+                    user?.updatedUser
+                      ? `${
+                          import.meta.env.VITE_REACT_APP_API
+                        }/${user?.updatedUser?.profileImagePath.replace(
+                          "public",
+                          ""
+                        )}`
+                      : `${
+                          import.meta.env.VITE_REACT_APP_API
+                        }/${user?.profileImagePath.replace("public", "")}`
+                  }`}
+                />
+              ) : (
+                <Avatar size="large" icon={<UserOutlined />} />
+              )}
             </Badge>
           </Space>
           <div className="admin">
-            <span className="user">utku toygun bektasoglu</span>
-            <span className="admins">ADMIN</span>
+            <span className="user">
+              {" "}
+              {user?.firstname || user?.updatedUser?.firstname}{" "}
+              {user?.lastname || user?.updatedUser?.lastname?.slice(0, 1)}.
+            </span>
+            <span className="admins">{user?.updatedUser?.bio}</span>
           </div>
         </div>
         <ul>

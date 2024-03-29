@@ -196,14 +196,14 @@ const DashBoard = ({ getLoginData }) => {
         <div className="products">
           <Products
             index={1}
-            title="Toplar Gelir"
+            title="Toplam Gelir"
             content={formattedNumber(allincomeTotal)}
             icon={<RiseOutlined />}
             paragraph={message}
           />
           <Products
             index={2}
-            title="Toplar Gider"
+            title="Toplam Gider"
             content={allExpensesTotal?.toLocaleString("tr-TR")}
             icon={<FallOutlined />}
             paragraph={messages}

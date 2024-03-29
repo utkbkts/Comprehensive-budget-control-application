@@ -7,7 +7,7 @@
   background-color: white;
   animation: sidebar ease 1s;
   z-index: 999999;
-  top: 6rem;
+  top: 4rem;
   @include xl-min {
     display: none;
   }

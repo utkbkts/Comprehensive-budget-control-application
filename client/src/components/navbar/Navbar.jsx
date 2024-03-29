@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { Avatar, Badge, Button, Space } from "antd";
 import { UserOutlined } from "@ant-design/icons";
@@ -22,6 +22,14 @@ const Navbar = () => {
   const handleLogout = () => {
     dispatch(setLogout());
   };
+
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+  }, [mobileOpen]);
   return (
     <div className="navbar-container">
       <div className="content">
