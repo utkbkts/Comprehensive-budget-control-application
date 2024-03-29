@@ -42,11 +42,7 @@ router.post("/add", upload.single("productImage"), async (req, res) => {
         url: results.secure_url,
       },
     });
-    await User.findByIdAndUpdate(
-      creator,
-      { $push: { productList: product } },
-      { new: true }
-    );
+
     res.status(201).json({
       data: product,
       success: true,
@@ -72,5 +68,29 @@ router.get("/get", async (req, res) => {
     });
   }
 });
-
+router.get("/get", async (req, res) => {
+  try {
+    const product = await Product.find().populate("creator");
+    res.status(200).json(product);
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+});
+router.delete("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const product = await Product.findByIdAndDelete(id);
+    res.status(200).json(product);
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+});
 module.exports = router;

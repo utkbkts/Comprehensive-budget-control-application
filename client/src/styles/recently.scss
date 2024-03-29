@@ -32,7 +32,21 @@
           padding: 8px;
           text-align: left;
         }
-
+        .delete {
+          @include background-grading-pink;
+          border: 1px solid #ddd;
+          cursor: pointer;
+          text-align: center;
+          label {
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            padding: 10px;
+            line-height: 1;
+            font-weight: 700;
+          }
+        }
         th {
           background-color: #f2f2f2;
         }
