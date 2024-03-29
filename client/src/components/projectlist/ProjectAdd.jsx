@@ -8,7 +8,9 @@ import { useSelector } from "react-redux";
 import { ContextProvider } from "../../context/Context";
 const ProjectAdd = () => {
   const [form] = Form.useForm();
-
+  const creatorid = useSelector(
+    (state) => state.user?.updatedUser?._id || state.user?._id
+  );
   const onFinish = async (values) => {
     const { projectname, projectstart, projectend, projectdesc } = values;
 
