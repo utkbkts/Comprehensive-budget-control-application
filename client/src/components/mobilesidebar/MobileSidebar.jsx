@@ -8,7 +8,7 @@ import { Link, useLocation } from "react-router-dom";
 import { AiTwotoneSnippets } from "react-icons/ai";
 import { GrProjects } from "react-icons/gr";
 import { useSelector } from "react-redux";
-const MobileSidebar = () => {
+const MobileSidebar = ({ mobileOpen, setMobileOpen }) => {
   const [show, setShow] = useState(true);
   const pathname = useLocation().pathname;
   const user = useSelector((state) => state.user);
@@ -50,33 +50,33 @@ const MobileSidebar = () => {
           </div>
         </div>
         <ul>
-          <Link to={"/dashboard"}>
+          <Link onClick={() => setMobileOpen(false)} to={"/dashboard"}>
             <li className={`${pathname === "/dashboard" ? "active" : ""}`}>
               Ana Sayfa <IoHomeOutline size={20} />
             </li>
           </Link>
-          <Link to={"/profile"}>
+          <Link onClick={() => setMobileOpen(false)} to={"/profile"}>
             <li className={`${pathname === "/profile" ? "active" : ""}`}>
               Profil <CiUser size={20} />
             </li>
           </Link>
 
-          <Link to={"/product-add"}>
+          <Link onClick={() => setMobileOpen(false)} to={"/product-add"}>
             <li className={`${pathname === "/product-add" ? "active" : ""}`}>
               Ürün Ekle <AppstoreAddOutlined size={20} />
             </li>
           </Link>
-          <Link to={"/income"}>
+          <Link onClick={() => setMobileOpen(false)} to={"/income"}>
             <li className={`${pathname === "/income" ? "active" : ""}`}>
               Gelir Ayarları <AiTwotoneSnippets size={20} />
             </li>
           </Link>
-          <Link to={"/expense"}>
+          <Link onClick={() => setMobileOpen(false)} to={"/expense"}>
             <li className={`${pathname === "/expense" ? "active" : ""}`}>
               Gider Ayarları <IoStatsChartOutline size={20} />
             </li>
           </Link>
-          <Link to={"/project-add"}>
+          <Link onClick={() => setMobileOpen(false)} to={"/project-add"}>
             <li className={`${pathname === "/project-add" ? "active" : ""}`}>
               Proje Ayarları <GrProjects size={20} />
             </li>

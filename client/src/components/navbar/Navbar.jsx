@@ -71,7 +71,9 @@ const Navbar = () => {
           />
         </div>
       </div>
-      {mobileOpen && <MobileSidebar />}
+      {mobileOpen && (
+        <MobileSidebar mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
+      )}
     </div>
   );
 };
