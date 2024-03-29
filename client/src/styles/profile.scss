@@ -1,0 +1,59 @@
+@import "./variants.scss";
+@import "./breakpoints.scss";
+
+.container-profile {
+  .content-profile {
+    .wrapper-profile {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      @include md {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+      }
+      .icon-profile {
+        @include buttonStylepink;
+        color: white;
+      }
+      .title-profile {
+        color: $gray-dark;
+        font-size: 16px;
+      }
+    }
+    .form-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-top: 8rem;
+      gap: 1rem;
+      @include md {
+        flex-direction: column;
+        align-items: center;
+      }
+      .form-content {
+        position: relative;
+        .close-circle {
+          position: absolute;
+          top: -8px;
+          left: 0;
+          cursor: pointer;
+        }
+      }
+      .form-group {
+        @include md {
+          width: 100%;
+        }
+        form {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          width: 400px;
+          @include md {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

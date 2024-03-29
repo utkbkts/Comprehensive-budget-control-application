@@ -1,0 +1,47 @@
+@import "./breakpoints.scss";
+@import "./variants.scss";
+.container-income {
+  .content-income {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    .wrapper-income {
+      gap: 8px;
+      display: flex;
+      align-items: center;
+      .icon-income {
+        @include buttonStylepink;
+        color: white;
+      }
+      .title-income {
+        color: $gray-dark;
+        font-size: 16px;
+      }
+    }
+    .income-form {
+      margin-top: 8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include sm {
+        width: 100%;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 400px;
+        @include sm {
+          width: 100%;
+        }
+      }
+    }
+    .income-form-expense {
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  }
+}

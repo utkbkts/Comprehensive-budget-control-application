@@ -1,0 +1,68 @@
+@import "../styles/variants.scss";
+@import "../styles/breakpoints.scss";
+
+//todo
+.todocontainer {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  border-radius: 10px;
+  background: white;
+  @include lg {
+    width: 100%;
+  }
+
+  .content-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .content-b {
+      padding: 15px;
+      display: flex;
+      align-items: center;
+
+      .ant-form-item-control-input-content {
+        display: flex;
+        align-items: center;
+      }
+
+      input {
+        padding: 10px 15px;
+        border: 1px solid $gray-lighter;
+        outline: none;
+      }
+      .ant-btn {
+        height: 40px !important;
+      }
+    }
+    .wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 15px;
+      .wrapper-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        input {
+          accent-color: $primary;
+        }
+      }
+      .wrapper-rights-todo {
+        .icon-todo {
+          border: 2px solid $primary;
+          border-radius: 50%;
+          cursor: pointer;
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+input[type="checkbox"] {
+  width: 1.5em;
+  height: 1.5rem;
+}

@@ -1,0 +1,71 @@
+@import "./variants.scss";
+@import "./breakpoints.scss";
+.mobile-sidebar {
+  position: fixed;
+  right: 0;
+  height: 100vh;
+  background-color: white;
+  animation: sidebar ease 1s;
+  z-index: 999999;
+  top: 6rem;
+  @include xl-min {
+    display: none;
+  }
+  .content {
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .admin-panel {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      flex-direction: column;
+
+      .admin {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      li {
+        list-style-type: none;
+        display: flex !important;
+        width: 100%;
+        justify-content: space-between;
+        color: $gray-dark !important;
+        transition: all 0.5s ease;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 1rem;
+        &:hover {
+          color: $pink !important;
+        }
+        @include h1Style;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+@keyframes sidebar {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}

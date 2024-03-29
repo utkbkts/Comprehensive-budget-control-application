@@ -1,0 +1,95 @@
+$gray-dark: #0f1531;
+$blue: #5e50f9;
+$indigo: #6610f2;
+$purple: #6a008a;
+$pink: #e91e63;
+$red: #f96868;
+$orange: #f2a654;
+$yellow: #f6e84e;
+$green: #46c35f;
+$teal: #58d8a3;
+$cyan: #57c7d4;
+$white: #fff;
+$gray: #434a54;
+$gray-light: #aab2bd;
+$gray-lighter: #e8eff4;
+$gray-lightest: #e6e9ed;
+$black: #000;
+$primary: #b66dff;
+$secondary: #d8d8d8;
+$success: #1bcfb4;
+$info: #198ae3;
+$warning: #fed713;
+$danger: #fe7c96;
+$light: #f8f9fa;
+$dark: #3e4b5b;
+
+@mixin shadow {
+  box-shadow: 0 3px 10px 2px rgba(0, 0, 0, 0.2);
+}
+
+@mixin buttonStylepink {
+  padding: 11px 15px;
+  background: linear-gradient(90deg, #da8cff, #9a55ff);
+  border: none;
+  font-size: 0.875rem;
+  line-height: 1;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+  color: white;
+  border-radius: 10px;
+}
+
+@mixin darkbuttonstyle {
+  background: linear-gradient(89deg, #5e7188, #3e4b5b);
+  border: none;
+  font-size: 0.875rem;
+  padding: 10px 15px;
+  line-height: 1;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+  color: white;
+  border-radius: 10px;
+}
+
+@mixin background-grading-pink {
+  background: linear-gradient(90deg, #ffbf96, #fe7096);
+  color: #fff;
+}
+
+@mixin h1Style {
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1;
+  vertical-align: middle;
+  color: $pink;
+}
+
+:export {
+  blue: $blue;
+  indigo: $indigo;
+  purple: $purple;
+  pink: $pink;
+  red: $red;
+  orange: $orange;
+  yellow: $yellow;
+  green: $green;
+  teal: $teal;
+  cyan: $cyan;
+  whitee: $white;
+  gray: $gray;
+  gray-light: $gray-light;
+  gray-lighter: $gray-lighter;
+  gray-lightest: $gray-lightest;
+  black: $black;
+  primary: $primary;
+  secondary: $secondary;
+  success: $success;
+  info: $info;
+  warning: $warning;
+  danger: $danger;
+  light: $light;
+  dark: $dark;
+}

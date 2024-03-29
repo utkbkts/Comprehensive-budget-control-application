@@ -1,0 +1,29 @@
+@import "./breakpoints.scss";
+@import "./variants.scss";
+.home-container {
+  width: 100%;
+  height: 100%;
+
+  .content {
+    display: flex;
+    .wrapper-lefts {
+      transition: all 0.5s ease-in-out;
+      flex: 1;
+      @include xl {
+        display: none;
+      }
+      &.active {
+        flex: 0;
+        width: 5%;
+      }
+    }
+    .wrapper-rights {
+      flex: 5;
+      margin-top: 2rem;
+      margin-left: 2rem;
+      @include lg {
+        margin-left: 0 !important;
+      }
+    }
+  }
+}
