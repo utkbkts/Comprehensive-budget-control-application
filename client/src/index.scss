@@ -80,7 +80,9 @@ h1 {
 }
 .ant-table-wrapper {
   overflow: auto;
-  width: 400px;
+  @include lg {
+    width: 400px;
+  }
 }
 .ant-table-row {
   background-color: white;

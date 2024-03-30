@@ -218,7 +218,7 @@ const DashBoard = ({ getLoginData }) => {
         </div>
         <div className="charts">
           <BartCharts getLoginData={getLoginData} />
-          <SimpleBarChars />
+          {/* <SimpleBarChars /> */}
         </div>
         <div className="recently">
           <RecentyleProducts getLoginData={getLoginData} />
