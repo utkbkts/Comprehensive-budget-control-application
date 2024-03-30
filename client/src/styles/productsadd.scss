@@ -28,6 +28,7 @@
         justify-content: center;
         margin-top: 8rem;
         @include md {
+          padding: 15px;
           width: 100%;
         }
 

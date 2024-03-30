@@ -44,7 +44,7 @@ const TodoList = ({ filteredTodos, onDelete }) => {
     onDelete(key);
   };
   return (
-    <div>
+    <div style={{ padding: "15px" }}>
       <h1>Yapılacak Projeler</h1>
       <Table
         columns={columns}

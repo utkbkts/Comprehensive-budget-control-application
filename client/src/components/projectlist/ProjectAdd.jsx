@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import "../../styles/projectadd.scss";
 import { Button, Form, Input } from "antd";
 import { GrProjects } from "react-icons/gr";
+import { DatePicker, Space } from "antd";
+
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useSelector } from "react-redux";
@@ -67,24 +69,26 @@ const ProjectAdd = () => {
             >
               <Input type="text" placeholder="Proje ismi" />
             </Form.Item>
-            <Form.Item
-              label="Proje başlangıç tarihi"
-              name="projectstart"
-              rules={[
-                { required: true, message: "Lütfen proje tarihini giriniz!" },
-              ]}
-            >
-              <Input type="date" />
-            </Form.Item>
-            <Form.Item
-              label="Proje bitiş tarihi"
-              name="projectend"
-              rules={[
-                { required: true, message: "Lütfen proje tarihini giriniz!" },
-              ]}
-            >
-              <Input type="date" />
-            </Form.Item>
+            <Space direction="vertical">
+              <Form.Item
+                label="Proje başlangıç tarihi"
+                name="projectstart"
+                rules={[
+                  { required: true, message: "Lütfen proje tarihini giriniz!" },
+                ]}
+              >
+                <DatePicker picker="week" style={{ width: "100%" }} />
+              </Form.Item>
+              <Form.Item
+                label="Proje bitiş tarihi"
+                name="projectend"
+                rules={[
+                  { required: true, message: "Lütfen proje tarihini giriniz!" },
+                ]}
+              >
+                <DatePicker picker="week" style={{ width: "100%" }} />
+              </Form.Item>
+            </Space>
             <Form.Item
               name="projectdesc"
               rules={[

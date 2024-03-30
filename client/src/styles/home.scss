@@ -6,6 +6,9 @@
 
   .content {
     display: flex;
+    @include lg {
+      flex-direction: column;
+    }
     .wrapper-lefts {
       transition: all 0.5s ease-in-out;
       flex: 1;

@@ -25,7 +25,7 @@ const Sidebar = () => {
   const user = useSelector((state) => state.user);
   return (
     <div className="sidebar-container">
-      <div className="content">
+      <div className="content-sidebar">
         {!open ? <h1>Bütçe Kontrol Uygulaması</h1> : ""}
         <div className="wrapper">
           {!open ? (

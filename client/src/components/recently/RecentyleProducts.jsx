@@ -88,7 +88,7 @@ const RecentyleProducts = ({ getLoginData }) => {
                         className="delete"
                         onClick={() => handleRemove(item?._id)}
                       >
-                        <label htmlFor="">Sil</label>
+                        Sil
                       </td>
                     </tr>
                   ))}
