@@ -61,6 +61,7 @@ router.post("/register", upload.single("profileImage"), async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
+
     const user = await User.findOne({ email: email.toLowerCase() });
     if (!user) {
       return res
@@ -77,7 +78,6 @@ router.post("/login", async (req, res) => {
 
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
     delete user.password;
-
     return res.status(200).json({
       success: true,
       message: "Login Successfuly",
@@ -85,6 +85,7 @@ router.post("/login", async (req, res) => {
       user: user,
     });
   } catch (error) {
+    console.log(error);
     return res.status(500).json({ success: false, message: error.message });
   }
 });

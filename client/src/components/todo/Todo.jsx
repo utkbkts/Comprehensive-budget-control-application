@@ -70,7 +70,7 @@ const Todo = ({ getLoginData }) => {
     data();
   }, [todoGet]);
   const filteredTodos = todoGet.filter(
-    (item) => item.creator._id === getLoginData._id
+    (item) => item.creator?._id === getLoginData?._id
   );
 
   //checked

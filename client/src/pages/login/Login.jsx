@@ -17,7 +17,6 @@ const Login = () => {
         `${import.meta.env.VITE_REACT_APP_API}/auth/login`,
         { email: values.email, password: values.password }
       );
-
       const data = await response.data;
       if (data.success === true) {
         toast.success(data.message);
@@ -38,7 +37,7 @@ const Login = () => {
       }
     } catch (error) {
       setLoadings(false);
-      toast.error("Böyle Bir kullanıcı bulunumadı");
+      toast.error(error.message);
     }
   };
 
