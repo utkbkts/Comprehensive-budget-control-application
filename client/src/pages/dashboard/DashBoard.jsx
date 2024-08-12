@@ -160,7 +160,7 @@ const DashBoard = ({ getLoginData }) => {
     data();
   }, [project]);
   const filteredTodos = project.filter(
-    (item) => item.creator._id === getLoginData._id
+    (item) => item.creator?._id === getLoginData?._id
   );
 
   //!delete project
