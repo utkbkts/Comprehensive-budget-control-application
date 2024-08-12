@@ -41,7 +41,7 @@ const RecentyleProducts = ({ getLoginData }) => {
     data();
   }, []);
   const filteredTodos = projectGet.filter(
-    (item) => item.creator._id === getLoginData._id
+    (item) => item.creator?._id === getLoginData?._id
   );
   return (
     <div className="recent-container">
