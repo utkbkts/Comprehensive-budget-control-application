@@ -4,17 +4,17 @@ import { ContextProvider } from "../../context/Context";
 import "../../styles/home.scss";
 import DashBoard from "../dashboard/DashBoard";
 import axios from "axios";
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setLogin } from "../../../redux/state";
 const Homepage = () => {
   const { open } = useContext(ContextProvider);
   const [userData, setUserData] = useState([]);
-   const navigate = useNavigate();
+  const navigate = useNavigate();
   const { getLoginData, setgetLoginData } = useContext(ContextProvider);
   const user = useSelector((state) => state.user);
   const filterUser = user?.updatedUser?._id || user?._id;
-  const matchedUser = userData.find((item) => item?._id === filterUser);
+  const matchedUser = userData?.find((item) => item?._id === filterUser);
   const dispatch = useDispatch();
   useEffect(() => {
     if (matchedUser) {
@@ -34,8 +34,8 @@ const Homepage = () => {
     };
     fetchData();
   }, []);
-  if(!user){
-    navigate("/login")
+  if (!user) {
+    navigate("/login");
   }
   return (
     <div className="home-container">
